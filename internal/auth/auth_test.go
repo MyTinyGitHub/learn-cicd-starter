@@ -25,5 +25,4 @@ func TestGetAPIKey(t *testing.T) {
 			t.Fatalf("Expected[%v] is not equal to actual[%v]", key, tc.actual)
 		}
 	}
-
 }
