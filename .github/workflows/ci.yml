@@ -40,8 +40,14 @@ jobs:
           version: "latest"
           install-go: false
 
+      - name: Install gosec
+        run: go install github.com/securego/gosec/v2/cmd/gosec@latest
+
       - name: Run go tests
         run: test -z $(go fmt ./...)
 
-      - name: Run Static Checkt
+      - name: Run Static Check
         run: staticcheck ./...
+
+      - name: Run Gosec Check
+        run: gosec ./...
